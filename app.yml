@@ -38,8 +38,8 @@ config:
     type: IMAGE
     description: Scatter plot of alpha_prime vs beta_prime
 info:
-  name: tool-splicedrift
-  slug: tool-splicedrift
+  name: splicedrift
+  slug: splicedrift
   type: SELF_LEARNED
   sourceUrl: https://github.com/FedLearnNet/tool-splicedrift
   shortDescription: Fits Bayesian models of age-associated splicing changes with SpliceDrift

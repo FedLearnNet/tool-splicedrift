@@ -1,4 +1,4 @@
-# tool-splicedrift
+# splicedrift
 
 Fits Bayesian models of age-associated splicing changes with SpliceDrift and exports results and plots.
 
