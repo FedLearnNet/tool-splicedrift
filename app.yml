@@ -1,0 +1,47 @@
+config:
+  hyperparams:
+  - name: draws
+    type: INTEGER
+    default: 200
+    description: Number of posterior draws per chain
+  - name: tune
+    type: INTEGER
+    default: 200
+    description: Number of tuning (warm-up) steps per chain
+  - name: chains
+    type: INTEGER
+    default: 1
+    description: Number of MCMC chains
+  - name: max_refits
+    type: INTEGER
+    default: 0
+    description: Number of automatic refits on convergence failure
+  - name: target_accept
+    type: FLOAT
+    default: 0.9
+    description: NUTS target acceptance probability
+  - name: min_total
+    type: INTEGER
+    default: 5
+    description: Minimum total reads N per sample
+  input:
+  - name: junction_counts
+    type: TSV
+    hasHeader: true
+    required: true
+    description: 'TSV with columns: event_id, sample_id, k, N, age, group (optional)'
+  output:
+  - name: results
+    type: CSV
+    description: Summary table with alpha_prime and beta_prime per (event, group)
+  - name: scatter_plot
+    type: IMAGE
+    description: Scatter plot of alpha_prime vs beta_prime
+info:
+  name: tool-splicedrift
+  slug: tool-splicedrift
+  type: SELF_LEARNED
+  sourceUrl: https://github.com/FedLearnNet/tool-splicedrift
+  shortDescription: Fits Bayesian models of age-associated splicing changes with SpliceDrift
+    and exports results and plots.
+  longDescription: null
